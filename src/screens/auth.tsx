@@ -1,6 +1,12 @@
-import React, {FC, useCallback, useState} from 'react';
-import {View, Text, StyleSheet, Switch} from 'react-native';
-import {Button, Input} from '../components';
+import React, {FC, useCallback, useMemo, useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
+import {BinarySwitch, Button, Input} from '../components';
 const AuthScreen: FC = () => {
   //local states
   const [name, setName] = useState<string | undefined>(undefined);
@@ -8,18 +14,33 @@ const AuthScreen: FC = () => {
   const [password, setPassword] = useState<string | undefined>(undefined);
   const [validateStatus, setStatus] = useState<string | null>(null);
   const [validateError, setError] = useState<boolean>(false);
-  const [toggleSignUp, setSwitchValue] = useState<boolean>(false);
+  const [toggleState, setToggleState] = useState<1 | 2>(1);
+  //study useMemo
+  const isLogin = useMemo(() => {
+    return toggleState === 1;
+  }, [toggleState]);
+  //const isLogin = toggleState === 1;
+  const toggleLogin = useCallback(() => {
+    //To handle switch toggle
+    setToggleState(1);
+    //State changes according to switch
+  }, []);
 
-  // const toggleSwitch = useCallback(() => {
-  //   //To handle switch toggle
-  //   setSwitchValue(toggleSignUp);
-  //   //State changes according to switch
-  // }, [toggleSignUp]);
+  const toggleSignUp = useCallback(() => {
+    //To handle switch toggle
+    setToggleState(2);
+    //State changes according to switch
+  }, []);
 
   //use callback hook ** study
   const validate = useCallback(() => {
     //email? == email undefined
     setError(false);
+    if (!isLogin && !name?.length) {
+      setStatus('Missing name');
+      setError(true);
+      return;
+    }
     if (!email?.length) {
       setStatus('Missing email');
       setError(true);
@@ -30,22 +51,23 @@ const AuthScreen: FC = () => {
       setError(true);
       return;
     }
-    if (toggleSignUp && !name?.length) {
-      setStatus('Missing name');
-      setError(true);
-      return;
-    }
-  }, [email, name, password, toggleSignUp]);
+  }, [email, name, password, isLogin]);
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}>
       <View>
-        {/*Setting the default value of state*/}
-        {/*On change of switch onValueChange will be triggered*/}
-        <Switch onValueChange={setSwitchValue} value={toggleSignUp} />
+        <BinarySwitch
+          state={toggleState}
+          option1={'Log In'}
+          option2={'Sign Up'}
+          onPress1={toggleLogin}
+          onPress2={toggleSignUp}
+        />
       </View>
-      <Text>{toggleSignUp ? 'Sign up' : 'Login'} Screen</Text>
-      {toggleSignUp ? (
+      <Text>{!isLogin ? 'Sign up' : 'Login'} Screen</Text>
+      {!isLogin ? (
         <Input placeholder="Name" value={name} onChangeText={setName} />
       ) : null}
       <Input placeholder="Email" value={email} onChangeText={setEmail} />
@@ -56,11 +78,11 @@ const AuthScreen: FC = () => {
         onChangeText={setPassword}
       />
 
-      <Button title={toggleSignUp ? 'Sign up' : 'Login'} onPress={validate} />
+      <Button title={!isLogin ? 'Sign up' : 'Login'} onPress={validate} />
       {validateError ? (
         <Text style={styles.errorMessage}>Sorry! {validateStatus}</Text>
       ) : null}
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -69,8 +91,7 @@ export default AuthScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
-    paddingTop: '70%',
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#e3e3e3',
   },
