@@ -1,16 +1,16 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 //import {Button} from '../components';
-const HomeScreen: FC = () => {
+const ActivityScreen: FC = () => {
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
+      <Text>Activity Screen</Text>
       {/* <Button title="Logout" /> */}
     </View>
   );
 };
 
-export default HomeScreen;
+export default ActivityScreen;
 
 const styles = StyleSheet.create({
   container: {
