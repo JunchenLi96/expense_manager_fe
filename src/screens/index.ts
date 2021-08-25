@@ -1,4 +1,4 @@
 import auth from './auth';
-import home from './home';
+import home from './addTransaction';
 
 export {auth, home};

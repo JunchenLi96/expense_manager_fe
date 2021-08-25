@@ -3,21 +3,17 @@ import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Button} from '../components';
 
-const ActivityScreen: FC = () => {
+const NewTransactionScreen: FC = () => {
   const navigation = useNavigation();
-
   return (
     <View style={styles.container}>
-      <Text>Activity Screen</Text>
-      <Button
-        title="Add Transaction"
-        onPress={() => navigation.navigate('New Transaction')}
-      />
+      <Text>New transaction Screen</Text>
+      <Button title="back" onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };
 
-export default ActivityScreen;
+export default NewTransactionScreen;
 
 const styles = StyleSheet.create({
   container: {

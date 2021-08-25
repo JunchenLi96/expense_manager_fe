@@ -20,6 +20,7 @@ const App: React.FC = () => {
   };
 
   return (
+    // @ts-ignore
     <AppContext.Provider value={user}>
       <MainNav />
     </AppContext.Provider>
