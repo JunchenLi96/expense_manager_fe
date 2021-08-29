@@ -1,4 +1,7 @@
 export const Routes = {
-  AuthScreen: 'authScreen',
+  AuthScreen: 'AuthScreen',
   Overview: 'Overview',
-};
+  Activity: 'Activity',
+  Profile: 'Profile',
+  NewTransaction: 'New Transaction',
+} as const;

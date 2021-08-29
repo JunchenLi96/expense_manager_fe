@@ -2,16 +2,18 @@ import {useNavigation} from '@react-navigation/native';
 import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Button} from '../components';
+import {NavProps} from '../navigations/navParams';
+import {Routes} from '../navigations/route';
 
 const ActivityScreen: FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavProps>();
 
   return (
     <View style={styles.container}>
       <Text>Activity Screen</Text>
       <Button
         title="Add Transaction"
-        onPress={() => navigation.navigate('New Transaction')}
+        onPress={() => navigation.navigate(Routes.NewTransaction)}
       />
     </View>
   );

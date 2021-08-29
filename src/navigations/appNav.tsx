@@ -5,6 +5,7 @@ import ActivityScreen from '../screens/activity';
 import ProfileScreen from '../screens/profile';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import NewTransactionScreen from '../screens/addTransaction';
+import {Routes} from './route';
 
 const Tabs = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -12,9 +13,9 @@ const Stack = createNativeStackNavigator();
 function Home() {
   return (
     <Tabs.Navigator>
-      <Tabs.Screen name="Overview" component={OverviewScreen} />
-      <Tabs.Screen name="Activity" component={ActivityScreen} />
-      <Tabs.Screen name="Profile" component={ProfileScreen} />
+      <Tabs.Screen name={Routes.Overview} component={OverviewScreen} />
+      <Tabs.Screen name={Routes.Activity} component={ActivityScreen} />
+      <Tabs.Screen name={Routes.Profile} component={ProfileScreen} />
     </Tabs.Navigator>
   );
 }
@@ -27,7 +28,10 @@ const HomeNav: FC = () => {
         name="Home"
         component={Home}
       />
-      <Stack.Screen name="New Transaction" component={NewTransactionScreen} />
+      <Stack.Screen
+        name={Routes.NewTransaction}
+        component={NewTransactionScreen}
+      />
     </Stack.Navigator>
   );
 };
