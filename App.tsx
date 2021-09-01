@@ -1,29 +1,13 @@
-import React, {useState} from 'react';
-import AppContext from './src/components/AppContext';
+import React from 'react';
 import MainNav from './src/navigations/mainNav';
+import {Provider} from 'react-redux';
+import {store} from './src/redux/store';
 
 const App: React.FC = () => {
-  const [userLoggedIn, setUserLogin] = useState<boolean>(false);
-
-  const login = () => {
-    setUserLogin(true);
-  };
-
-  const logout = () => {
-    setUserLogin(false);
-  };
-
-  const user = {
-    userLoggedIn,
-    login,
-    logout,
-  };
-
   return (
-    // @ts-ignore
-    <AppContext.Provider value={user}>
+    <Provider store={store}>
       <MainNav />
-    </AppContext.Provider>
+    </Provider>
   );
 };
 

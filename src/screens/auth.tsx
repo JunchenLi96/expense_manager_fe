@@ -1,5 +1,4 @@
 import React, {FC, useCallback, useMemo, useState} from 'react';
-import {useContext} from 'react';
 import {
   View,
   Text,
@@ -7,8 +6,10 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
+import {useAppDispatch} from '../redux/hooks';
+import {login} from '../redux/userSlice';
 import {BinarySwitch, Button, Input} from '../components';
-import AppContext from '../components/AppContext';
+
 const AuthScreen: FC = () => {
   //local states
   const [name, setName] = useState<string | undefined>(undefined);
@@ -34,7 +35,7 @@ const AuthScreen: FC = () => {
     //State changes according to switch
   }, []);
 
-  const {login} = useContext(AppContext);
+  const dispatch = useAppDispatch();
   //use callback hook
   const validate = useCallback((): boolean => {
     //email? == email undefined
@@ -59,9 +60,9 @@ const AuthScreen: FC = () => {
 
   const handleLogin = useCallback(() => {
     if (validate()) {
-      login();
+      dispatch(login());
     }
-  }, [validate, login]);
+  }, [validate, dispatch]);
 
   return (
     <KeyboardAvoidingView

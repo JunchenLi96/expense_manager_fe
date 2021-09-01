@@ -1,15 +1,16 @@
-import React, {FC, useContext} from 'react';
+import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Button} from '../components';
-import AppContext from '../components/AppContext';
+import {useAppDispatch} from '../redux/hooks';
+import {logout} from '../redux/userSlice';
 
 const ProfileScreen: FC = () => {
-  const {logout} = useContext(AppContext);
+  const dispatch = useAppDispatch();
 
   return (
     <View style={styles.container}>
       <Text>Profile Screen</Text>
-      <Button title="Logout" onPress={() => logout()} />
+      <Button title="Logout" onPress={() => dispatch(logout())} />
     </View>
   );
 };
