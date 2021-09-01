@@ -6,11 +6,17 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import {useAppDispatch} from '../redux/hooks';
-import {login} from '../redux/userSlice';
+import {useAppDispatch, useAppSelector} from '../redux/hooks';
+import {login} from '../redux/authSlice';
+import {setUserEmail, setUserName} from '../redux/userSlice';
 import {BinarySwitch, Button, Input} from '../components';
 
 const AuthScreen: FC = () => {
+  const Reduxname = useAppSelector(state => state.user.name);
+  const Reduxemail = useAppSelector(state => state.user.email);
+  console.log(
+    'login screen: Username = ' + Reduxname + ' UserEmail= ' + Reduxemail,
+  );
   //local states
   const [name, setName] = useState<string | undefined>(undefined);
   const [email, setEmail] = useState<string | undefined>(undefined);
@@ -61,8 +67,14 @@ const AuthScreen: FC = () => {
   const handleLogin = useCallback(() => {
     if (validate()) {
       dispatch(login());
+      dispatch(setUserEmail(email));
+      console.log('user email = ' + email);
+      if (name?.length) {
+        dispatch(setUserName(name));
+        console.log('user name = ' + name);
+      }
     }
-  }, [validate, dispatch]);
+  }, [validate, dispatch, email, name]);
 
   return (
     <KeyboardAvoidingView

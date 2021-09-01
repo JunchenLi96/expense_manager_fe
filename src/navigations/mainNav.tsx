@@ -5,7 +5,7 @@ import HomeNav from './appNav';
 import AuthNav from './authNav';
 
 const MainNav: FC = () => {
-  const userLoggedIn = useAppSelector(state => state.user.userLoggedIn);
+  const userLoggedIn = useAppSelector(state => state.auth.userLoggedIn);
   console.log(userLoggedIn ? 'logged in' : 'logged out');
   return (
     <NavigationContainer>

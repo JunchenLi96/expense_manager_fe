@@ -1,11 +1,14 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-//import {Button} from '../components';
+import {useAppSelector} from '../redux/hooks';
 const OverviewScreen: FC = () => {
+  const name = useAppSelector(state => state.user.name);
+  const email = useAppSelector(state => state.user.email);
   return (
     <View style={styles.container}>
-      <Text>Overview Screen</Text>
-      {/* <Button title="Logout" /> */}
+      <Text>
+        Welcome userName: {name}, userEmail: {email}
+      </Text>
     </View>
   );
 };

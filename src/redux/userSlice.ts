@@ -1,33 +1,36 @@
-import {createSlice} from '@reduxjs/toolkit';
+import {authSlice} from './authSlice';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 export interface UserState {
-  userLoggedIn: boolean;
+  name: string | undefined;
+  email: string | undefined;
 }
 
 const initialState: UserState = {
-  userLoggedIn: false,
+  name: undefined,
+  email: undefined,
 };
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    login: state => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.userLoggedIn = true;
+    setUserName: (state, action: PayloadAction<string | undefined>) => {
+      if (action.payload !== undefined) {
+        state.name = action.payload;
+      }
     },
-    logout: state => {
-      state.userLoggedIn = false;
+    setUserEmail: (state, action: PayloadAction<string | undefined>) => {
+      if (action.payload !== undefined) {
+        state.email = action.payload;
+      }
     },
-    // incrementByAmount: (state, action: PayloadAction<number>) => {
-    //   state.value += action.payload;
-    // },
+  },
+  extraReducers: builder => {
+    builder.addCase(authSlice.actions.logout, () => initialState);
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {login, logout} = userSlice.actions;
+export const {setUserName, setUserEmail} = userSlice.actions;
 export default userSlice.reducer;
