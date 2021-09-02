@@ -21,15 +21,16 @@ export const authSlice = createSlice({
       //RUSH using another tool for redux toolkit and have to write it immutable
       //Reducers have to be Pure (pure function (no side effect))
     },
+    signUp: state => {
+      state.userLoggedIn = true;
+    },
     logout: state => {
       state.userLoggedIn = false;
     },
-    // incrementByAmount: (state, action: PayloadAction<number>) => {
-    //   state.value += action.payload;
-    // },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {login, logout} = authSlice.actions;
+export const AuthActions = authSlice.actions;
+//read about destructuring
 export default authSlice.reducer;

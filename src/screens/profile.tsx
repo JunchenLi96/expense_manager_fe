@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Button} from '../components';
 import {useAppDispatch} from '../redux/hooks';
-import {logout} from '../redux/authSlice';
+import {AuthActions} from '../redux/authSlice';
 
 const ProfileScreen: FC = () => {
   const dispatch = useAppDispatch();
@@ -10,7 +10,7 @@ const ProfileScreen: FC = () => {
   return (
     <View style={styles.container}>
       <Text>Profile Screen</Text>
-      <Button title="Logout" onPress={() => dispatch(logout())} />
+      <Button title="Logout" onPress={() => dispatch(AuthActions.logout())} />
     </View>
   );
 };

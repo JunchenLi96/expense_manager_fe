@@ -7,7 +7,7 @@ import {
   Platform,
 } from 'react-native';
 import {useAppDispatch, useAppSelector} from '../redux/hooks';
-import {login} from '../redux/authSlice';
+import {AuthActions} from '../redux/authSlice';
 import {setUserEmail, setUserName} from '../redux/userSlice';
 import {BinarySwitch, Button, Input} from '../components';
 
@@ -66,12 +66,10 @@ const AuthScreen: FC = () => {
 
   const handleLogin = useCallback(() => {
     if (validate()) {
-      dispatch(login());
+      dispatch(AuthActions.login());
       dispatch(setUserEmail(email));
-      console.log('user email = ' + email);
       if (name?.length) {
         dispatch(setUserName(name));
-        console.log('user name = ' + name);
       }
     }
   }, [validate, dispatch, email, name]);

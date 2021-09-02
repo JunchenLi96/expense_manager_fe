@@ -1,4 +1,4 @@
-import {authSlice} from './authSlice';
+import {AuthActions} from './authSlice';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 export interface UserState {
@@ -27,7 +27,7 @@ export const userSlice = createSlice({
     },
   },
   extraReducers: builder => {
-    builder.addCase(authSlice.actions.logout, () => initialState);
+    builder.addCase(AuthActions.logout, () => initialState);
   },
 });
 
