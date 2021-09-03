@@ -10,7 +10,11 @@ const ProfileScreen: FC = () => {
   return (
     <View style={styles.container}>
       <Text>Profile Screen</Text>
-      <Button title="Logout" onPress={() => dispatch(AuthActions.logout())} />
+      <Button
+        title="Logout"
+        onPress={() => dispatch(AuthActions.logout())}
+        loading={false}
+      />
     </View>
   );
 };

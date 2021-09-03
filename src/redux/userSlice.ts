@@ -1,9 +1,11 @@
+import {UserDTO} from './../types/userTypes';
 import {AuthActions} from './authSlice';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 export interface UserState {
   name: string | undefined;
   email: string | undefined;
+  //token: string | undefined;
 }
 
 const initialState: UserState = {
@@ -28,6 +30,20 @@ export const userSlice = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(AuthActions.logout, () => initialState);
+    builder.addCase(
+      AuthActions.login,
+      (state, {payload: {name, email}}: PayloadAction<UserDTO>) => {
+        state.name = name;
+        state.email = email;
+      },
+    );
+    builder.addCase(
+      AuthActions.signUp,
+      (state, {payload: {name, email}}: PayloadAction<UserDTO>) => {
+        state.name = name;
+        state.email = email;
+      },
+    );
   },
 });
 

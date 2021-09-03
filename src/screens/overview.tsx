@@ -4,10 +4,12 @@ import {useAppSelector} from '../redux/hooks';
 const OverviewScreen: FC = () => {
   const name = useAppSelector(state => state.user.name);
   const email = useAppSelector(state => state.user.email);
+  const token = useAppSelector(state => state.auth.token);
+
   return (
     <View style={styles.container}>
       <Text>
-        Welcome userName: {name}, userEmail: {email}
+        Welcome userName: {name}, userEmail: {email}, userToken{token}
       </Text>
     </View>
   );

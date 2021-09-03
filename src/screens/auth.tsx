@@ -8,22 +8,61 @@ import {
 } from 'react-native';
 import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {AuthActions} from '../redux/authSlice';
-import {setUserEmail, setUserName} from '../redux/userSlice';
 import {BinarySwitch, Button, Input} from '../components';
+import userApi from '../api/users';
+import {UserDTO} from '../types/userTypes';
+import {ApiResponse} from 'apisauce';
+import {APIErr} from '../types/errorDTO';
 
 const AuthScreen: FC = () => {
-  const Reduxname = useAppSelector(state => state.user.name);
-  const Reduxemail = useAppSelector(state => state.user.email);
-  console.log(
-    'login screen: Username = ' + Reduxname + ' UserEmail= ' + Reduxemail,
-  );
   //local states
   const [name, setName] = useState<string | undefined>(undefined);
   const [email, setEmail] = useState<string | undefined>(undefined);
   const [password, setPassword] = useState<string | undefined>(undefined);
-  const [validateStatus, setStatus] = useState<string | null>(null);
+  const [validateStatus, setStatus] = useState<string | null | undefined>(null);
   const [validateError, setError] = useState<boolean>(false);
   const [toggleState, setToggleState] = useState<1 | 2>(1);
+
+  const status = useAppSelector(state => state.auth.operationState);
+  const dispatch = useAppDispatch();
+
+  const loginOperation = useCallback(async () => {
+    dispatch(AuthActions.setStatus('pending'));
+    const response: ApiResponse<UserDTO, APIErr> = await userApi.login(
+      email,
+      password,
+    );
+    if (response.ok && !!response.data) {
+      const userDetails = response.data;
+      dispatch(AuthActions.login(userDetails));
+      dispatch(AuthActions.setStatus('fulfilled'));
+    } else {
+      setStatus(response.data as APIErr);
+      setError(true);
+      dispatch(AuthActions.setStatus('failed'));
+    }
+  }, [email, password, dispatch]);
+
+  const signUpOperation = useCallback(async () => {
+    const response: ApiResponse<UserDTO, APIErr> = await userApi.signUp(
+      name,
+      email,
+      password,
+    );
+    dispatch(AuthActions.setStatus('pending'));
+    if (response.ok && !!response.data) {
+      const userDetails = response.data;
+      dispatch(AuthActions.login(userDetails));
+      dispatch(AuthActions.setStatus('fulfilled'));
+    } else {
+      setStatus(response.data as APIErr);
+      setError(true);
+      dispatch(AuthActions.setStatus('failed'));
+    }
+  }, [name, email, password, dispatch]);
+
+  //read about useEffect and !!
+
   //example of useMemo
   const isLogin = useMemo(() => {
     return toggleState === 1;
@@ -41,7 +80,6 @@ const AuthScreen: FC = () => {
     //State changes according to switch
   }, []);
 
-  const dispatch = useAppDispatch();
   //use callback hook
   const validate = useCallback((): boolean => {
     //email? == email undefined
@@ -66,13 +104,13 @@ const AuthScreen: FC = () => {
 
   const handleLogin = useCallback(() => {
     if (validate()) {
-      dispatch(AuthActions.login());
-      dispatch(setUserEmail(email));
-      if (name?.length) {
-        dispatch(setUserName(name));
+      if (isLogin) {
+        loginOperation();
+      } else {
+        signUpOperation();
       }
     }
-  }, [validate, dispatch, email, name]);
+  }, [validate, loginOperation, signUpOperation, isLogin]);
 
   return (
     <KeyboardAvoidingView
@@ -99,8 +137,14 @@ const AuthScreen: FC = () => {
           secureTextEntry
           onChangeText={setPassword}
         />
+        <View style={styles.button}>
+          <Button
+            title={!isLogin ? 'Sign up' : 'Login'}
+            onPress={handleLogin}
+            loading={status === 'pending'}
+          />
+        </View>
 
-        <Button title={!isLogin ? 'Sign up' : 'Login'} onPress={handleLogin} />
         {validateError ? (
           <Text style={styles.errorMessage}>Sorry! {validateStatus}</Text>
         ) : null}
@@ -124,5 +168,17 @@ const styles = StyleSheet.create({
   },
   errorMessage: {
     color: '#ff0033',
+  },
+  button: {
+    backgroundColor: '#000',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 15,
+    paddingVertical: 10,
+    borderRadius: 5,
+    marginVertical: 10,
+  },
+  text: {
+    color: '#fff',
   },
 });
