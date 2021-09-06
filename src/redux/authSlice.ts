@@ -1,5 +1,10 @@
 import {APIErr} from './../types/errorDTO';
-import {UserDTO, OperationStatus, UserLoginDTO} from './../types/userTypes';
+import {
+  UserDTO,
+  OperationStatus,
+  UserLoginDTO,
+  UserSignUpDTO,
+} from './../types/userTypes';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 export interface AuthState {
@@ -23,22 +28,19 @@ export const authSlice = createSlice({
     login: (_state, {payload: _}: PayloadAction<UserLoginDTO>) => undefined,
     //study how to use lowdash
 
-    signUp: (state, {payload}: PayloadAction<UserDTO>) => {
-      state.userLoggedIn = true;
-      state.token = payload.token;
-    },
+    signUp: (_state, {payload: _}: PayloadAction<UserSignUpDTO>) => undefined,
 
     logout: () => initialState,
 
-    login_request: state => {
+    auth_request: state => {
       state.operationStatus = OperationStatus.Pending;
       state.errorMessage = '';
     },
-    login_failed: (state, {payload}: PayloadAction<APIErr>) => {
+    auth_failed: (state, {payload}: PayloadAction<APIErr>) => {
       state.operationStatus = OperationStatus.Failed;
       state.errorMessage = payload;
     },
-    login_fulfilled: (state, {payload}: PayloadAction<UserDTO>) => {
+    auth_fulfilled: (state, {payload}: PayloadAction<UserDTO>) => {
       state.operationStatus = OperationStatus.Fulfilled;
       state.userLoggedIn = true;
       state.token = payload.token;

@@ -40,11 +40,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 15,
-    paddingVertical: 10,
+    paddingVertical: 0,
     borderRadius: 5,
     marginVertical: 10,
   },
   text: {
     color: '#fff',
+    fontSize: 20,
   },
 });

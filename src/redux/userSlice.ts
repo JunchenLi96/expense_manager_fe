@@ -31,19 +31,19 @@ export const userSlice = createSlice({
   extraReducers: builder => {
     builder.addCase(AuthActions.logout, () => initialState);
     builder.addCase(
-      AuthActions.login_fulfilled,
+      AuthActions.auth_fulfilled,
       (state, {payload: {name, email}}: PayloadAction<UserDTO>) => {
         state.name = name;
         state.email = email;
       },
     );
-    builder.addCase(
-      AuthActions.signUp,
-      (state, {payload: {name, email}}: PayloadAction<UserDTO>) => {
-        state.name = name;
-        state.email = email;
-      },
-    );
+    // builder.addCase(
+    //   AuthActions.signUp,
+    //   (state, {payload: {name, email}}: PayloadAction<UserDTO>) => {
+    //     state.name = name;
+    //     state.email = email;
+    //   },
+    // );
   },
 });
 

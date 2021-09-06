@@ -10,10 +10,6 @@ import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {AuthActions} from '../redux/authSlice';
 import {BinarySwitch, Button, Input} from '../components';
 import {OperationStatus} from '../types/userTypes';
-// import userApi from '../api/users';
-// import {OperationStatus, UserDTO} from '../types/userTypes';
-// import {ApiResponse} from 'apisauce';
-// import {APIErr} from '../types/errorDTO';
 
 const AuthScreen: FC = () => {
   //local states
@@ -25,23 +21,6 @@ const AuthScreen: FC = () => {
   const status = useAppSelector(state => state.auth.operationStatus);
   const errorMessage = useAppSelector(state => state.auth.errorMessage);
   const dispatch = useAppDispatch();
-
-  // const loginOperation = useCallback(async () => {
-  //   dispatch(AuthActions.setStatus(OperationStatus.Pending));
-  //   const response: ApiResponse<UserDTO, APIErr> = await userApi.login(
-  //     email,
-  //     password,
-  //   );
-  //   if (response.ok && !!response.data) {
-  //     const userDetails = response.data;
-  //     dispatch(AuthActions.login(userDetails));
-  //     dispatch(AuthActions.setStatus(OperationStatus.Fulfilled));
-  //   } else {
-  //     setStatus(response.data as APIErr);
-  //     setError(true);
-  //     dispatch(AuthActions.setStatus(OperationStatus.Failed));
-  //   }
-  // }, [email, password, dispatch]);
 
   // const signUpOperation = useCallback(async () => {
   //   const response: ApiResponse<UserDTO, APIErr> = await userApi.signUp(
@@ -85,15 +64,15 @@ const AuthScreen: FC = () => {
     //email? == email undefined
     //setError(false);
     if (!isLogin && !name?.length) {
-      dispatch(AuthActions.login_failed('Missing name'));
+      dispatch(AuthActions.auth_failed('Missing name'));
       return false;
     }
     if (!email?.length) {
-      dispatch(AuthActions.login_failed('Missing email'));
+      dispatch(AuthActions.auth_failed('Missing email'));
       return false;
     }
     if (!password?.length) {
-      dispatch(AuthActions.login_failed('Missing password'));
+      dispatch(AuthActions.auth_failed('Missing password'));
       return false;
     }
     return true;
@@ -103,11 +82,13 @@ const AuthScreen: FC = () => {
     if (validate()) {
       if (isLogin && email && password) {
         dispatch(AuthActions.login({email: email, password: password}));
-      } else {
-        //signUpOperation();
+      } else if (name && email && password) {
+        dispatch(
+          AuthActions.signUp({name: name, email: email, password: password}),
+        );
       }
     }
-  }, [validate, dispatch, email, password, isLogin]);
+  }, [validate, dispatch, email, password, name, isLogin]);
 
   return (
     <KeyboardAvoidingView
@@ -174,8 +155,5 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 5,
     marginVertical: 10,
-  },
-  text: {
-    color: '#fff',
   },
 });

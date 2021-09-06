@@ -9,7 +9,9 @@ const ProfileScreen: FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Profile Screen</Text>
+      <View style={styles.textBox}>
+        <Text>Something</Text>
+      </View>
       <Button
         title="Logout"
         onPress={() => dispatch(AuthActions.logout())}
@@ -24,7 +26,19 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  textBox: {
+    //alignSelf: 'flex-start',
+    justifyContent: 'flex-start',
+    backgroundColor: '#fff',
+    padding: '30%',
+    paddingVertical: '50%',
+    borderRadius: 5,
+    marginVertical: 10,
+  },
+  button: {
+    justifyContent: 'flex-start',
   },
 });

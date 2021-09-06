@@ -9,6 +9,10 @@ export interface UserLoginDTO {
   email: string;
 }
 
+export interface UserSignUpDTO extends UserLoginDTO {
+  name: string;
+}
+
 export enum OperationStatus {
   Idle = 'idle',
   Pending = 'pending',
