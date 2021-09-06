@@ -9,7 +9,11 @@ const NewTransactionScreen: FC = () => {
   return (
     <View style={styles.container}>
       <Text>New transaction Screen</Text>
-      <Button title="back" onPress={() => navigation.goBack()} />
+      <Button
+        title="back"
+        onPress={() => navigation.goBack()}
+        loading={false}
+      />
     </View>
   );
 };

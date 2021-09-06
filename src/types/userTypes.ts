@@ -3,3 +3,15 @@ export interface UserDTO {
   email: string;
   token: string; // jwt token with id claim
 }
+
+export interface UserLoginDTO {
+  password: string;
+  email: string;
+}
+
+export enum OperationStatus {
+  Idle = 'idle',
+  Pending = 'pending',
+  Failed = 'failed',
+  Fulfilled = 'fulfilled',
+}

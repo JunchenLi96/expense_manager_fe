@@ -2,25 +2,20 @@ import {configureStore} from '@reduxjs/toolkit';
 import authReducer from './authSlice';
 import userReducer from './userSlice';
 import {combineReducers} from 'redux';
-import {
-  persistReducer,
-  persistStore,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
+import {persistReducer, persistStore} from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import Reactotron from '../ReactotronConfig';
+import createSagaMiddleware from '@redux-saga/core';
+import {rootSaga} from '../sagas/rootSaga';
+
+const sagaMiddleware = createSagaMiddleware();
 
 const reducers = combineReducers({
   auth: authReducer,
   user: userReducer,
 });
 const persistConfig = {
-  key: 'root',
+  key: 'rootV2',
   storage: AsyncStorage,
 };
 
@@ -33,13 +28,15 @@ export const store = configureStore({
     : undefined,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+      thunk: false,
+      serializableCheck: false,
+      immutableCheck: false,
+    }).concat(sagaMiddleware),
 });
 
-export const persistor = persistStore(store);
+export const persistor = persistStore(store, undefined, () => {
+  sagaMiddleware.run(rootSaga);
+});
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;

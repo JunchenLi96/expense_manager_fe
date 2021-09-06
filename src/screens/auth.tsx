@@ -9,57 +9,57 @@ import {
 import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {AuthActions} from '../redux/authSlice';
 import {BinarySwitch, Button, Input} from '../components';
-import userApi from '../api/users';
-import {UserDTO} from '../types/userTypes';
-import {ApiResponse} from 'apisauce';
-import {APIErr} from '../types/errorDTO';
+import {OperationStatus} from '../types/userTypes';
+// import userApi from '../api/users';
+// import {OperationStatus, UserDTO} from '../types/userTypes';
+// import {ApiResponse} from 'apisauce';
+// import {APIErr} from '../types/errorDTO';
 
 const AuthScreen: FC = () => {
   //local states
   const [name, setName] = useState<string | undefined>(undefined);
   const [email, setEmail] = useState<string | undefined>(undefined);
   const [password, setPassword] = useState<string | undefined>(undefined);
-  const [validateStatus, setStatus] = useState<string | null | undefined>(null);
-  const [validateError, setError] = useState<boolean>(false);
   const [toggleState, setToggleState] = useState<1 | 2>(1);
 
-  const status = useAppSelector(state => state.auth.operationState);
+  const status = useAppSelector(state => state.auth.operationStatus);
+  const errorMessage = useAppSelector(state => state.auth.errorMessage);
   const dispatch = useAppDispatch();
 
-  const loginOperation = useCallback(async () => {
-    dispatch(AuthActions.setStatus('pending'));
-    const response: ApiResponse<UserDTO, APIErr> = await userApi.login(
-      email,
-      password,
-    );
-    if (response.ok && !!response.data) {
-      const userDetails = response.data;
-      dispatch(AuthActions.login(userDetails));
-      dispatch(AuthActions.setStatus('fulfilled'));
-    } else {
-      setStatus(response.data as APIErr);
-      setError(true);
-      dispatch(AuthActions.setStatus('failed'));
-    }
-  }, [email, password, dispatch]);
+  // const loginOperation = useCallback(async () => {
+  //   dispatch(AuthActions.setStatus(OperationStatus.Pending));
+  //   const response: ApiResponse<UserDTO, APIErr> = await userApi.login(
+  //     email,
+  //     password,
+  //   );
+  //   if (response.ok && !!response.data) {
+  //     const userDetails = response.data;
+  //     dispatch(AuthActions.login(userDetails));
+  //     dispatch(AuthActions.setStatus(OperationStatus.Fulfilled));
+  //   } else {
+  //     setStatus(response.data as APIErr);
+  //     setError(true);
+  //     dispatch(AuthActions.setStatus(OperationStatus.Failed));
+  //   }
+  // }, [email, password, dispatch]);
 
-  const signUpOperation = useCallback(async () => {
-    const response: ApiResponse<UserDTO, APIErr> = await userApi.signUp(
-      name,
-      email,
-      password,
-    );
-    dispatch(AuthActions.setStatus('pending'));
-    if (response.ok && !!response.data) {
-      const userDetails = response.data;
-      dispatch(AuthActions.login(userDetails));
-      dispatch(AuthActions.setStatus('fulfilled'));
-    } else {
-      setStatus(response.data as APIErr);
-      setError(true);
-      dispatch(AuthActions.setStatus('failed'));
-    }
-  }, [name, email, password, dispatch]);
+  // const signUpOperation = useCallback(async () => {
+  //   const response: ApiResponse<UserDTO, APIErr> = await userApi.signUp(
+  //     name,
+  //     email,
+  //     password,
+  //   );
+  //   dispatch(AuthActions.setStatus(OperationStatus.Pending));
+  //   if (response.ok && !!response.data) {
+  //     const userDetails = response.data;
+  //     dispatch(AuthActions.login(userDetails));
+  //     dispatch(AuthActions.setStatus(OperationStatus.Fulfilled));
+  //   } else {
+  //     setStatus(response.data as APIErr);
+  //     setError(true);
+  //     dispatch(AuthActions.setStatus(OperationStatus.Failed));
+  //   }
+  // }, [name, email, password, dispatch]);
 
   //read about useEffect and !!
 
@@ -83,34 +83,31 @@ const AuthScreen: FC = () => {
   //use callback hook
   const validate = useCallback((): boolean => {
     //email? == email undefined
-    setError(false);
+    //setError(false);
     if (!isLogin && !name?.length) {
-      setStatus('Missing name');
-      setError(true);
+      dispatch(AuthActions.login_failed('Missing name'));
       return false;
     }
     if (!email?.length) {
-      setStatus('Missing email');
-      setError(true);
+      dispatch(AuthActions.login_failed('Missing email'));
       return false;
     }
     if (!password?.length) {
-      setStatus('Missing password');
-      setError(true);
+      dispatch(AuthActions.login_failed('Missing password'));
       return false;
     }
     return true;
-  }, [email, name, password, isLogin]);
+  }, [email, name, password, isLogin, dispatch]);
 
   const handleLogin = useCallback(() => {
     if (validate()) {
-      if (isLogin) {
-        loginOperation();
+      if (isLogin && email && password) {
+        dispatch(AuthActions.login({email: email, password: password}));
       } else {
-        signUpOperation();
+        //signUpOperation();
       }
     }
-  }, [validate, loginOperation, signUpOperation, isLogin]);
+  }, [validate, dispatch, email, password, isLogin]);
 
   return (
     <KeyboardAvoidingView
@@ -141,12 +138,12 @@ const AuthScreen: FC = () => {
           <Button
             title={!isLogin ? 'Sign up' : 'Login'}
             onPress={handleLogin}
-            loading={status === 'pending'}
+            loading={status === OperationStatus.Pending}
           />
         </View>
 
-        {validateError ? (
-          <Text style={styles.errorMessage}>Sorry! {validateStatus}</Text>
+        {status === OperationStatus.Failed ? (
+          <Text style={styles.errorMessage}>Sorry! {errorMessage}</Text>
         ) : null}
       </View>
     </KeyboardAvoidingView>

@@ -14,6 +14,7 @@ const ActivityScreen: FC = () => {
       <Button
         title="Add Transaction"
         onPress={() => navigation.navigate(Routes.NewTransaction)}
+        loading={false}
       />
     </View>
   );

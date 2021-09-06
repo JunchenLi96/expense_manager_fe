@@ -1,38 +1,48 @@
-import {UserDTO} from './../types/userTypes';
+import {APIErr} from './../types/errorDTO';
+import {UserDTO, OperationStatus, UserLoginDTO} from './../types/userTypes';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 export interface AuthState {
   userLoggedIn: boolean;
   token: string;
-  operationState: 'idle' | 'pending' | 'failed' | 'fulfilled';
+  operationStatus: OperationStatus;
+  errorMessage: string;
 }
 
 const initialState: AuthState = {
   userLoggedIn: false,
   token: '',
-  operationState: 'idle',
+  operationStatus: OperationStatus.Idle,
+  errorMessage: '',
 };
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    login: (state, {payload}: PayloadAction<UserDTO>) => {
-      state.userLoggedIn = true;
-      state.token = payload.token;
-    },
+    login: (_state, {payload: _}: PayloadAction<UserLoginDTO>) => undefined,
+    //study how to use lowdash
+
     signUp: (state, {payload}: PayloadAction<UserDTO>) => {
       state.userLoggedIn = true;
       state.token = payload.token;
     },
-    logout: state => {
-      state.userLoggedIn = false;
+
+    logout: () => initialState,
+
+    login_request: state => {
+      state.operationStatus = OperationStatus.Pending;
+      state.errorMessage = '';
     },
-    setStatus: (
-      state,
-      {payload}: PayloadAction<'idle' | 'pending' | 'failed' | 'fulfilled'>,
-    ) => {
-      state.operationState = payload;
+    login_failed: (state, {payload}: PayloadAction<APIErr>) => {
+      state.operationStatus = OperationStatus.Failed;
+      state.errorMessage = payload;
+    },
+    login_fulfilled: (state, {payload}: PayloadAction<UserDTO>) => {
+      state.operationStatus = OperationStatus.Fulfilled;
+      state.userLoggedIn = true;
+      state.token = payload.token;
+      state.errorMessage = '';
     },
   },
 });

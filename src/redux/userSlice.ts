@@ -31,7 +31,7 @@ export const userSlice = createSlice({
   extraReducers: builder => {
     builder.addCase(AuthActions.logout, () => initialState);
     builder.addCase(
-      AuthActions.login,
+      AuthActions.login_fulfilled,
       (state, {payload: {name, email}}: PayloadAction<UserDTO>) => {
         state.name = name;
         state.email = email;
