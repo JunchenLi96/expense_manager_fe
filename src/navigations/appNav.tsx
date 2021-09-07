@@ -6,6 +6,7 @@ import ProfileScreen from '../screens/profile';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import NewTransactionScreen from '../screens/addTransaction';
 import {Routes} from './route';
+import EditNameScreen from '../screens/editName';
 
 const Tabs = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -32,6 +33,7 @@ const HomeNav: FC = () => {
         name={Routes.NewTransaction}
         component={NewTransactionScreen}
       />
+      <Stack.Screen name={Routes.EditName} component={EditNameScreen} />
     </Stack.Navigator>
   );
 };

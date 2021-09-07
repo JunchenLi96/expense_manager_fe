@@ -7,6 +7,7 @@ export type NavParams = {
   [Routes.Activity]: undefined;
   [Routes.Profile]: undefined;
   [Routes.NewTransaction]: undefined;
+  [Routes.EditName]: undefined;
 };
 
 export type NavProps = StackNavigationProp<NavParams>;

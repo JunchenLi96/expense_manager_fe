@@ -1,22 +1,41 @@
 import React, {FC} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Button} from '../components';
-import {useAppDispatch} from '../redux/hooks';
+import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {AuthActions} from '../redux/authSlice';
+import {NavProps} from '../navigations/navParams';
+import {Routes} from '../navigations/route';
+import {useNavigation} from '@react-navigation/core';
 
 const ProfileScreen: FC = () => {
+  const navigation = useNavigation<NavProps>();
+
   const dispatch = useAppDispatch();
+  const name = useAppSelector(state => state.user.name);
+  const email = useAppSelector(state => state.user.email);
 
   return (
     <View style={styles.container}>
       <View style={styles.textBox}>
-        <Text>Something</Text>
+        <Text> Name: </Text>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style={styles.text}> {name} </Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(Routes.EditName)}>
+            <Text style={styles.text}>{'>'}</Text>
+          </TouchableOpacity>
+        </View>
+
+        <Text> Email: </Text>
+        <Text style={styles.text}> {email} </Text>
       </View>
-      <Button
-        title="Logout"
-        onPress={() => dispatch(AuthActions.logout())}
-        loading={false}
-      />
+      <View style={styles.buttonBox}>
+        <Button
+          title="Logout"
+          onPress={() => dispatch(AuthActions.logout())}
+          loading={false}
+        />
+      </View>
     </View>
   );
 };
@@ -26,19 +45,22 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
   },
   textBox: {
-    //alignSelf: 'flex-start',
-    justifyContent: 'flex-start',
+    marginTop: '5%',
+    justifyContent: 'space-evenly',
     backgroundColor: '#fff',
-    padding: '30%',
-    paddingVertical: '50%',
     borderRadius: 5,
     marginVertical: 10,
   },
-  button: {
-    justifyContent: 'flex-start',
+  text: {
+    padding: 20,
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'purple',
+  },
+  buttonBox: {
+    flex: 1,
+    justifyContent: 'flex-end',
   },
 });

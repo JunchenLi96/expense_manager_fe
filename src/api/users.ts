@@ -25,4 +25,20 @@ const signUp = (
     password: password,
   });
 
-export default {login, signUp};
+const editName = (
+  name: string | undefined,
+  token: string | undefined,
+): Promise<ApiResponse<UserDTO, APIErr>> =>
+  api.post(
+    USERS_URL + '/update',
+    {
+      name: name,
+    },
+    {
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    },
+  );
+
+export default {login, signUp, editName};

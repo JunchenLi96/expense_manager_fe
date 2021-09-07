@@ -4,4 +4,5 @@ export const Routes = {
   Activity: 'Activity',
   Profile: 'Profile',
   NewTransaction: 'New Transaction',
+  EditName: 'Edit Name',
 } as const;

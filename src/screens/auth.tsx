@@ -22,24 +22,6 @@ const AuthScreen: FC = () => {
   const errorMessage = useAppSelector(state => state.auth.errorMessage);
   const dispatch = useAppDispatch();
 
-  // const signUpOperation = useCallback(async () => {
-  //   const response: ApiResponse<UserDTO, APIErr> = await userApi.signUp(
-  //     name,
-  //     email,
-  //     password,
-  //   );
-  //   dispatch(AuthActions.setStatus(OperationStatus.Pending));
-  //   if (response.ok && !!response.data) {
-  //     const userDetails = response.data;
-  //     dispatch(AuthActions.login(userDetails));
-  //     dispatch(AuthActions.setStatus(OperationStatus.Fulfilled));
-  //   } else {
-  //     setStatus(response.data as APIErr);
-  //     setError(true);
-  //     dispatch(AuthActions.setStatus(OperationStatus.Failed));
-  //   }
-  // }, [name, email, password, dispatch]);
-
   //read about useEffect and !!
 
   //example of useMemo

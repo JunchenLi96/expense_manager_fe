@@ -1,22 +1,30 @@
-import {UserDTO} from './../types/userTypes';
+import {OperationStatus, UserDTO} from './../types/userTypes';
 import {AuthActions} from './authSlice';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {APIErr} from '../types/errorDTO';
 
 export interface UserState {
   name: string | undefined;
   email: string | undefined;
-  //token: string | undefined;
+  operationStatus: OperationStatus;
+  errorMessage: string;
 }
 
 const initialState: UserState = {
   name: undefined,
   email: undefined,
+  operationStatus: OperationStatus.Idle,
+  errorMessage: '',
 };
 
 export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    updateName: (
+      _state,
+      {payload: _}: PayloadAction<{name: string; token: string}>,
+    ) => undefined,
     setUserName: (state, action: PayloadAction<string | undefined>) => {
       if (action.payload !== undefined) {
         state.name = action.payload;
@@ -26,6 +34,23 @@ export const userSlice = createSlice({
       if (action.payload !== undefined) {
         state.email = action.payload;
       }
+    },
+    userSetIdle: state => {
+      state.operationStatus = OperationStatus.Idle;
+      state.errorMessage = '';
+    },
+    user_request: state => {
+      state.operationStatus = OperationStatus.Pending;
+      state.errorMessage = '';
+    },
+    user_failed: (state, {payload}: PayloadAction<APIErr>) => {
+      state.operationStatus = OperationStatus.Failed;
+      state.errorMessage = payload;
+    },
+    user_fulfilled: (state, {payload: _}: PayloadAction<UserDTO>) => {
+      state.operationStatus = OperationStatus.Fulfilled;
+      state.errorMessage = '';
+      state.name = _.name;
     },
   },
   extraReducers: builder => {
@@ -37,16 +62,9 @@ export const userSlice = createSlice({
         state.email = email;
       },
     );
-    // builder.addCase(
-    //   AuthActions.signUp,
-    //   (state, {payload: {name, email}}: PayloadAction<UserDTO>) => {
-    //     state.name = name;
-    //     state.email = email;
-    //   },
-    // );
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {setUserName, setUserEmail} = userSlice.actions;
+export const UserActions = userSlice.actions;
 export default userSlice.reducer;
