@@ -6,13 +6,14 @@ import {AuthActions} from '../redux/authSlice';
 import {NavProps} from '../navigations/navParams';
 import {Routes} from '../navigations/route';
 import {useNavigation} from '@react-navigation/core';
+import {getUserEmail, getUserName} from '../redux/selectors';
 
 const ProfileScreen: FC = () => {
   const navigation = useNavigation<NavProps>();
 
   const dispatch = useAppDispatch();
-  const name = useAppSelector(state => state.user.name);
-  const email = useAppSelector(state => state.user.email);
+  const name = useAppSelector(getUserName);
+  const email = useAppSelector(getUserEmail);
 
   return (
     <View style={styles.container}>

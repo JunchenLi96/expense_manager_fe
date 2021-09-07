@@ -21,10 +21,8 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    updateName: (
-      _state,
-      {payload: _}: PayloadAction<{name: string; token: string}>,
-    ) => undefined,
+    updateName: (_state, {payload: _}: PayloadAction<{name: string}>) =>
+      undefined,
     setUserName: (state, action: PayloadAction<string | undefined>) => {
       if (action.payload !== undefined) {
         state.name = action.payload;

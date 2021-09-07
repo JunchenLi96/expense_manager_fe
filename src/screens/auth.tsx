@@ -10,6 +10,7 @@ import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {AuthActions} from '../redux/authSlice';
 import {BinarySwitch, Button, Input} from '../components';
 import {OperationStatus} from '../types/userTypes';
+import {getAuthErrorMessage, getAuthStatus} from '../redux/selectors';
 
 const AuthScreen: FC = () => {
   //local states
@@ -18,8 +19,8 @@ const AuthScreen: FC = () => {
   const [password, setPassword] = useState<string | undefined>(undefined);
   const [toggleState, setToggleState] = useState<1 | 2>(1);
 
-  const status = useAppSelector(state => state.auth.operationStatus);
-  const errorMessage = useAppSelector(state => state.auth.errorMessage);
+  const status = useAppSelector(getAuthStatus);
+  const errorMessage = useAppSelector(getAuthErrorMessage);
   const dispatch = useAppDispatch();
 
   //read about useEffect and !!

@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {useAppSelector} from '../redux/hooks';
+import {getToken, getUserEmail, getUserName} from '../redux/selectors';
 const OverviewScreen: FC = () => {
-  const name = useAppSelector(state => state.user.name);
-  const email = useAppSelector(state => state.user.email);
-  const token = useAppSelector(state => state.auth.token);
+  const name = useAppSelector(getUserName);
+  const email = useAppSelector(getUserEmail);
+  const token = useAppSelector(getToken);
 
   return (
     <View style={styles.container}>

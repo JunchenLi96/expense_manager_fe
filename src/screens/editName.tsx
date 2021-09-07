@@ -13,27 +13,31 @@ import {useMountEffect} from '../hooks/useMountEffect';
 import usePrevious from '../hooks/usePrevious';
 import {NavProps} from '../navigations/navParams';
 import {useAppDispatch, useAppSelector} from '../redux/hooks';
+import {
+  getErrorMessage,
+  getOperationStatus,
+  getUserName,
+} from '../redux/selectors';
 import {UserActions} from '../redux/userSlice';
 import {OperationStatus} from '../types/userTypes';
 
 const EditNameScreen: FC = () => {
   const navigation = useNavigation<NavProps>();
   const dispatch = useAppDispatch();
-  const name = useAppSelector(state => state.user.name);
-  const token = useAppSelector(state => state.auth.token);
-  const status = useAppSelector(state => state.user.operationStatus);
+  const name = useAppSelector(getUserName);
+  const status = useAppSelector(getOperationStatus);
+  const errorMessage = useAppSelector(getErrorMessage);
   const previousStatus = usePrevious(status);
-  const errorMessage = useAppSelector(state => state.user.errorMessage);
 
   const [nameToUpdate, setNameToUpdate] = useState<string | undefined>(name);
 
   const handleUpdate = useCallback(() => {
     if (nameToUpdate) {
-      dispatch(UserActions.updateName({name: nameToUpdate, token: token}));
+      dispatch(UserActions.updateName({name: nameToUpdate}));
     } else {
       dispatch(UserActions.user_failed('Name cannot be empty'));
     }
-  }, [dispatch, nameToUpdate, token]);
+  }, [dispatch, nameToUpdate]);
 
   useMountEffect(() => {
     dispatch(UserActions.userSetIdle());
@@ -68,7 +72,11 @@ const EditNameScreen: FC = () => {
             onPress={() => navigation.goBack()}
             loading={false}
           />
-          <Button title="Update" onPress={handleUpdate} loading={false} />
+          <Button
+            title="Update"
+            onPress={handleUpdate}
+            loading={status === OperationStatus.Pending}
+          />
         </View>
       </View>
     </KeyboardAvoidingView>
