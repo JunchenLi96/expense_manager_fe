@@ -6,7 +6,7 @@
     "ios": {
       "type": "ios.app",
       "binaryPath": "./ios/Build/Products/Debug-iphonesimulator/expense_manager_fe.app",
-      "build": "xcodebuild -workspace ./ios/expense_manager_fe.xcworkspace -configuration Debug -scheme expense_manager_fe -destination id=E85A5EF0-36A2-454A-BF11-AEB885E14255"
+      "build": "xcodebuild -workspace ./ios/expense_manager_fe.xcworkspace -configuration Debug -scheme expense_manager_fe -sdk iphonesimulator -arch x86_64 -derivedDataPath ./ios/"
     },
     "android": {
       "type": "android.apk",
@@ -24,7 +24,7 @@
     "emulator": {
       "type": "android.emulator",
       "device": {
-        "avdName": "Pixel_5_API_30"
+        "avdName": "emu27"
       }
     }
   },

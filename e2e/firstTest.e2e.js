@@ -1,7 +1,10 @@
 /* eslint-disable no-undef */
 describe('Example', () => {
   beforeAll(async () => {
-    await device.launchApp({newInstance: true});
+    await device.launchApp({
+      newInstance: true,
+      launchArgs: {detoxPrintBusyIdleResources: 'YES'},
+    });
   });
 
   beforeEach(async () => {
