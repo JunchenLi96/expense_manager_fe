@@ -12,6 +12,8 @@ target 'expense_manager_fe' do
     :hermes_enabled => false
   )
 
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
   target 'expense_manager_feTests' do
     inherit! :complete
     # Pods for testing
