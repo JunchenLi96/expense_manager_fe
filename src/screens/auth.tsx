@@ -4,7 +4,7 @@ import {
   Text,
   StyleSheet,
   KeyboardAvoidingView,
-  Platform,
+  //Platform,
 } from 'react-native';
 import {useAppDispatch, useAppSelector} from '../redux/hooks';
 import {AuthActions} from '../redux/authSlice';
@@ -74,9 +74,7 @@ const AuthScreen: FC = () => {
   }, [validate, dispatch, email, password, name, isLogin]);
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={styles.rootContainer}>
+    <KeyboardAvoidingView style={styles.rootContainer}>
       <View style={styles.container}>
         <View>
           <BinarySwitch
