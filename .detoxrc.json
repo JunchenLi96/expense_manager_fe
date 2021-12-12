@@ -11,7 +11,7 @@
     "android": {
       "type": "android.apk",
       "binaryPath": "./android/app/build/outputs/apk/debug/app-debug.apk",
-      "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd .."
+      "build": "cd android && ./gradlew assembleDebug assembleDebugAndroidTest -DtestBuildType=debug && cd .."
     }
   },
   "devices": {
@@ -24,18 +24,20 @@
     "emulator": {
       "type": "android.emulator",
       "device": {
-        "avdName": "emu27"
+        "avdName": "emu"
       }
     }
   },
   "configurations": {
     "ios": {
       "device": "simulator",
-      "app": "ios"
+      "app": "ios",
+      "artifacts": false
     },
     "android": {
       "device": "emulator",
-      "app": "android"
+      "app": "android",
+      "artifacts": false
     }
   }
 }
