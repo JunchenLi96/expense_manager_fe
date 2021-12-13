@@ -20,6 +20,8 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+ios/Index
+ios/ModuleCache*
 
 # Android/IntelliJ
 #
