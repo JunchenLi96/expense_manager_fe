@@ -1,0 +1,538 @@
+2021-12-13 18:20:37.967 bluetooth - /Volumes/Android/buildbot/src/android/emu-master-dev/system/bt/vendor_libs/test_vendor_lib/model/setup/device_boutique.cc:33 - Register: Registering beacon
+2021-12-13 18:20:37.967 bluetooth - /Volumes/Android/buildbot/src/android/emu-master-dev/system/bt/vendor_libs/test_vendor_lib/model/setup/device_boutique.cc:33 - Register: Registering beacon_swarm
+2021-12-13 18:20:37.967 bluetooth - /Volumes/Android/buildbot/src/android/emu-master-dev/system/bt/vendor_libs/test_vendor_lib/model/setup/device_boutique.cc:33 - Register: Registering car_kit
+2021-12-13 18:20:37.967 bluetooth - /Volumes/Android/buildbot/src/android/emu-master-dev/system/bt/vendor_libs/test_vendor_lib/model/setup/device_boutique.cc:33 - Register: Registering classic
+2021-12-13 18:20:37.967 bluetooth - /Volumes/Android/buildbot/src/android/emu-master-dev/system/bt/vendor_libs/test_vendor_lib/model/setup/device_boutique.cc:33 - Register: Registering keyboard
+2021-12-13 18:20:37.967 bluetooth - /Volumes/Android/buildbot/src/android/emu-master-dev/system/bt/vendor_libs/test_vendor_lib/model/setup/device_boutique.cc:33 - Register: Registering remote_loopback
+2021-12-13 18:20:37.967 bluetooth - /Volumes/Android/buildbot/src/android/emu-master-dev/system/bt/vendor_libs/test_vendor_lib/model/setup/device_boutique.cc:33 - Register: Registering scripted_beacon
+2021-12-13 18:20:37.967 bluetooth - /Volumes/Android/buildbot/src/android/emu-master-dev/system/bt/vendor_libs/test_vendor_lib/model/setup/device_boutique.cc:33 - Register: Registering sniffer
+handleCpuAcceleration: feature check for hvf
+cannot add library /Users/junchenli/Library/Android/sdk/emulator/qemu/darwin-x86_64/lib64/vulkan/libvulkan.dylib: failed
+added library /Users/junchenli/Library/Android/sdk/emulator/lib64/vulkan/libvulkan.dylib
+cannot add library /Users/junchenli/Library/Android/sdk/emulator/qemu/darwin-x86_64/lib64/vulkan/libMoltenVK.dylib: failed
+added library /Users/junchenli/Library/Android/sdk/emulator/lib64/vulkan/libMoltenVK.dylib
+emulator: autoconfig: -skin pixel_4
+emulator: autoconfig: -skindir /Users/junchenli/Library/Android/sdk/skins/
+emulator: autoconfig: -kernel /Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//kernel-ranchu
+emulator: Target arch = 'x86_64'
+emulator: Auto-detect: Kernel image requires new device naming scheme.
+emulator: Auto-detect: Kernel does not support YAFFS2 partitions.
+emulator: autoconfig: -ramdisk /Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//ramdisk.img
+emulator: Using initial system image: /Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//system.img
+emulator: Using initial vendor image: /Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//vendor.img
+emulator: autoconfig: -initdata /Users/junchenli/.android/avd/emu2.avd/userdata.img
+emulator: autoconfig: -cache /Users/junchenli/.android/avd/emu2.avd/cache.img
+emulator: autoconfig: -sdcard /Users/junchenli/.android/avd/emu2.avd/sdcard.img
+emulator: Increasing RAM size to 2048MB
+emulator: VM heap size 256MB is below hardware specified minimum of 512MB,setting it to that value
+emulator: System image is read only
+emulator: Found 1 DNS servers: 192.168.31.1
+emulator: VERBOSE: FeatureControlImpl.cpp:172: WARNING: unexpected system image feature string, emulator might not function correctly, please try updating the emulator.
+
+emulator: VERBOSE: FeatureControlImpl.cpp:175: Unexpected feature list:
+
+emulator: VERBOSE: FeatureControlImpl.cpp:177: DeviceStateOnBoot
+emulator: VERBOSE: FeatureControlImpl.cpp:177: Vulkan
+emulator: VERBOSE: FeatureControlImpl.cpp:179: 
+
+emulator: trying to load skin file '/Users/junchenli/Library/Android/sdk/skins//pixel_4/layout'
+emulator: Requested console port 11876: Inferring adb port 11877.
+emulator: Creating ext4 userdata partition: /Users/junchenli/.android/avd/emu2.avd/data
+Creating filesystem with parameters:
+    Size: 6442450944
+    Block size: 4096
+    Blocks per group: 32768
+    Inodes per group: 8192
+    Inode size: 256
+    Journal blocks: 24576
+    Label: 
+    Blocks: 1572864
+    Block groups: 48
+    Reserved block group size: 383
+Created filesystem with 31/393216 inodes and 52359/1572864 blocks
+emulator: Creating empty ext4 cache partition: /Users/junchenli/.android/avd/emu2.avd/cache.img
+Creating filesystem with parameters:
+    Size: 69206016
+    Block size: 4096
+    Blocks per group: 32768
+    Inodes per group: 4224
+    Inode size: 256
+    Journal blocks: 1024
+    Label: 
+    Blocks: 16896
+    Block groups: 1
+    Reserved block group size: 7
+Created filesystem with 11/4224 inodes and 1302/16896 blocks
+emulator: CPU Acceleration: working
+emulator: CPU Acceleration status: Hypervisor.Framework OS X Version 12.0
+emulator: VERBOSE: modem_main.cpp:489: started modem simulator host server at port: 51215
+emulator: GPU emulation enabled using 'host' mode
+emulator: Initializing hardware OpenGLES emulation support
+emulator: VERBOSE: MultiDisplay.cpp:341: create display 0
+emulator: VERBOSE: MultiDisplay.cpp:435: setDisplayPose 0 x 0 y 0 w 1080 h 2280 dpi 0
+emulator: INFO: userspace-boot-properties.cpp:249: Sending adb public key [QAAAAL3f3ylrLO0fBLpZ7kKRIgJx0/uUQ0eHC2D/IngWZkfA1udHtO2jHHKt1EXOqBHlV4OqOl8qGPdLugnu9DKzktbg4sxjHbx8PI6zmo5NhQDIyh+4zO7puB8LMxoVU7jAAc9FEdEY9Khmz2bd5l+z8kvzo3WQWdGFGfRXVnRnA+Ppa8S63HTbeNku9LiIBcONdNSZnN/AgBdgGls6jf2BpeYEuXp3Aoy9ODeU0h/4pu9zWWrxJ1N33vXxaj12K41zEJt4D/9SEk+JQPi2zVf2lF0LJ22lOMCwEudrO+SlSCUmrvd0k5SGHa7elmqeEUA8xY9IfRn9Z5Ow1YF5yy+S++jDJzmPZv9hP1RMECRAgVUWPbtCWLDTno15Zw0a35zzHyFX5h1qkPWjyp2qV7fjOMmXcECBP9GHDcRWnDwlOVs7mfbqptNTemZeGoK9dFHKTAzwP3zO7I+SKU504M4Ui+QFxwLgB0hnm8AtXlVIh9mABgA9fqzG+pDxILHApjzjo9fNQxkMu2/XZaEsrY2aSuKpuVuUyBQ/u7LVp19JKnZXgAAwlG+2NCNViHurUI7I2aQDL9f/k820+Cmel2m5hXoQ5CEDmqX6FzAsJeaYWr+18CgijA8Rj6Frh19b6f6pL3esH3ylecELHBH55Qn8U3soFgUbRBZ/2ggDzhGlGW6fA77pYQEAAQA= junchenli@unknown]
+emulator: Found 1 DNS servers: 192.168.31.1
+Content of hardware configuration file:
+  hw.cpu.arch = x86_64
+  hw.cpu.ncore = 4
+  hw.ramSize = 2048
+  hw.screen = multi-touch
+  hw.mainKeys = false
+  hw.trackBall = false
+  hw.keyboard = true
+  hw.keyboard.lid = false
+  hw.keyboard.charmap = qwerty2
+  hw.dPad = false
+  hw.rotaryInput = false
+  hw.gsmModem = true
+  hw.gps = true
+  hw.battery = true
+  hw.accelerometer = true
+  hw.gyroscope = true
+  hw.audioInput = true
+  hw.audioOutput = true
+  hw.sdCard = true
+  hw.sdCard.path = /Users/junchenli/.android/avd/emu2.avd/sdcard.img
+  disk.cachePartition = true
+  disk.cachePartition.path = /Users/junchenli/.android/avd/emu2.avd/cache.img
+  disk.cachePartition.size = 66m
+  test.quitAfterBootTimeOut = -1
+  test.delayAdbTillBootComplete = 0
+  test.monitorAdb = 0
+  hw.lcd.width = 1080
+  hw.lcd.height = 2280
+  hw.lcd.depth = 16
+  hw.lcd.density = 440
+  hw.lcd.backlight = true
+  hw.lcd.vsync = 60
+  hw.gltransport = pipe
+  hw.gltransport.asg.writeBufferSize = 1048576
+  hw.gltransport.asg.writeStepSize = 4096
+  hw.gltransport.asg.dataRingSize = 32768
+  hw.gltransport.drawFlushInterval = 800
+  hw.displayRegion.0.1.xOffset = -1
+  hw.displayRegion.0.1.yOffset = -1
+  hw.displayRegion.0.1.width = 0
+  hw.displayRegion.0.1.height = 0
+  hw.displayRegion.0.2.xOffset = -1
+  hw.displayRegion.0.2.yOffset = -1
+  hw.displayRegion.0.2.width = 0
+  hw.displayRegion.0.2.height = 0
+  hw.displayRegion.0.3.xOffset = -1
+  hw.displayRegion.0.3.yOffset = -1
+  hw.displayRegion.0.3.width = 0
+  hw.displayRegion.0.3.height = 0
+  hw.display1.width = 0
+  hw.display1.height = 0
+  hw.display1.density = 0
+  hw.display1.xOffset = -1
+  hw.display1.yOffset = -1
+  hw.display1.flag = 0
+  hw.display2.width = 0
+  hw.display2.height = 0
+  hw.display2.density = 0
+  hw.display2.xOffset = -1
+  hw.display2.yOffset = -1
+  hw.display2.flag = 0
+  hw.display3.width = 0
+  hw.display3.height = 0
+  hw.display3.density = 0
+  hw.display3.xOffset = -1
+  hw.display3.yOffset = -1
+  hw.display3.flag = 0
+  hw.gpu.enabled = true
+  hw.gpu.mode = host
+  hw.initialOrientation = Portrait
+  hw.camera.back = virtualscene
+  hw.camera.front = emulated
+  vm.heapSize = 512
+  hw.sensors.light = true
+  hw.sensors.pressure = true
+  hw.sensors.humidity = true
+  hw.sensors.proximity = true
+  hw.sensors.magnetic_field = true
+  hw.sensors.magnetic_field_uncalibrated = true
+  hw.sensors.gyroscope_uncalibrated = true
+  hw.sensors.orientation = true
+  hw.sensors.temperature = true
+  hw.sensor.hinge = true
+  hw.sensor.hinge.count = 0
+  hw.sensor.hinge.type = 0
+  hw.sensor.hinge.sub_type = 0
+  hw.sensor.hinge.fold_to_displayRegion.0.1_at_posture = 1
+  hw.sensor.roll = false
+  hw.sensor.roll.count = 0
+  hw.sensor.roll.resize_to_displayRegion.0.1_at_posture = 6
+  hw.sensor.roll.resize_to_displayRegion.0.2_at_posture = 6
+  hw.sensor.roll.resize_to_displayRegion.0.3_at_posture = 6
+  hw.sensors.heart_rate = false
+  hw.useext4 = true
+  hw.arc = false
+  hw.arc.autologin = false
+  kernel.path = /Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//kernel-ranchu
+  kernel.newDeviceNaming = yes
+  kernel.supportsYaffs2 = no
+  disk.ramdisk.path = /Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//ramdisk.img
+  disk.systemPartition.initPath = /Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//system.img
+  disk.systemPartition.size = 4107m
+  disk.vendorPartition.initPath = /Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//vendor.img
+  disk.vendorPartition.size = 800m
+  disk.dataPartition.path = /Users/junchenli/.android/avd/emu2.avd/userdata-qemu.img
+  disk.dataPartition.initPath = /Users/junchenli/.android/avd/emu2.avd/userdata.img
+  disk.dataPartition.size = 6g
+  disk.encryptionKeyPartition.path = /Users/junchenli/.android/avd/emu2.avd/encryptionkey.img
+  PlayStore.enabled = false
+  avd.name = emu2
+  avd.id = emu2
+  fastboot.forceColdBoot = false
+  android.sdk.root = /Users/junchenli/Library/Android/Sdk
+  android.avd.home = /Users/junchenli/.android/avd
+.
+QEMU options list:
+emulator: argv[00] = "/Users/junchenli/Library/Android/sdk/emulator/qemu/darwin-x86_64/qemu-system-x86_64"
+emulator: argv[01] = "-dns-server"
+emulator: argv[02] = "192.168.31.1"
+emulator: argv[03] = "-no-audio"
+emulator: argv[04] = "-mem-path"
+emulator: argv[05] = "/Users/junchenli/.android/avd/emu2.avd/snapshots/default_boot/ram.img"
+emulator: argv[06] = "-mem-file-shared"
+emulator: argv[07] = "-serial"
+emulator: argv[08] = "null"
+emulator: argv[09] = "-android-ports"
+emulator: argv[10] = "11876,11877"
+emulator: argv[11] = "-device"
+emulator: argv[12] = "goldfish_pstore,addr=0xff018000,size=0x10000,file=/Users/junchenli/.android/avd/emu2.avd/data/misc/pstore/pstore.bin"
+emulator: argv[13] = "-cpu"
+emulator: argv[14] = "android64"
+emulator: argv[15] = "-enable-hvf"
+emulator: argv[16] = "-smp"
+emulator: argv[17] = "cores=4"
+emulator: argv[18] = "-m"
+emulator: argv[19] = "2048"
+emulator: argv[20] = "-lcd-density"
+emulator: argv[21] = "440"
+emulator: argv[22] = "-nodefaults"
+emulator: argv[23] = "-kernel"
+emulator: argv[24] = "/Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//kernel-ranchu"
+emulator: argv[25] = "-initrd"
+emulator: argv[26] = "/Users/junchenli/.android/avd/emu2.avd/initrd"
+emulator: argv[27] = "-drive"
+emulator: argv[28] = "if=none,index=0,id=system,if=none,file=/Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//system.img,read-only"
+emulator: argv[29] = "-device"
+emulator: argv[30] = "virtio-blk-pci,drive=system,modern-pio-notify"
+emulator: argv[31] = "-drive"
+emulator: argv[32] = "if=none,index=1,id=cache,if=none,file=/Users/junchenli/.android/avd/emu2.avd/cache.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576"
+emulator: argv[33] = "-device"
+emulator: argv[34] = "virtio-blk-pci,drive=cache,modern-pio-notify"
+emulator: argv[35] = "-drive"
+emulator: argv[36] = "if=none,index=2,id=userdata,if=none,file=/Users/junchenli/.android/avd/emu2.avd/userdata-qemu.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576"
+emulator: argv[37] = "-device"
+emulator: argv[38] = "virtio-blk-pci,drive=userdata,modern-pio-notify"
+emulator: argv[39] = "-drive"
+emulator: argv[40] = "if=none,index=3,id=encrypt,if=none,file=/Users/junchenli/.android/avd/emu2.avd/encryptionkey.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576"
+emulator: argv[41] = "-device"
+emulator: argv[42] = "virtio-blk-pci,drive=encrypt,modern-pio-notify"
+emulator: argv[43] = "-drive"
+emulator: argv[44] = "if=none,index=4,id=vendor,if=none,file=/Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//vendor.img,read-only"
+emulator: argv[45] = "-device"
+emulator: argv[46] = "virtio-blk-pci,drive=vendor,modern-pio-notify"
+emulator: argv[47] = "-drive"
+emulator: argv[48] = "if=none,index=5,id=sdcard,if=none,file=/Users/junchenli/.android/avd/emu2.avd/sdcard.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576"
+emulator: argv[49] = "-device"
+emulator: argv[50] = "virtio-blk-pci,drive=sdcard,modern-pio-notify"
+emulator: argv[51] = "-netdev"
+emulator: argv[52] = "user,id=mynet"
+emulator: argv[53] = "-device"
+emulator: argv[54] = "virtio-net-pci,netdev=mynet"
+emulator: argv[55] = "-chardev"
+emulator: argv[56] = "null,id=forhvc0"
+emulator: argv[57] = "-chardev"
+emulator: argv[58] = "null,id=forhvc1"
+emulator: argv[59] = "-device"
+emulator: argv[60] = "virtio-serial-pci,ioeventfd=off"
+emulator: argv[61] = "-device"
+emulator: argv[62] = "virtconsole,chardev=forhvc0"
+emulator: argv[63] = "-device"
+emulator: argv[64] = "virtconsole,chardev=forhvc1"
+emulator: argv[65] = "-device"
+emulator: argv[66] = "virtio-serial,ioeventfd=off"
+emulator: argv[67] = "-chardev"
+emulator: argv[68] = "socket,port=51214,host=::1,nowait,nodelay,ipv6,id=modem"
+emulator: argv[69] = "-device"
+emulator: argv[70] = "virtserialport,chardev=modem,name=modem"
+emulator: argv[71] = "-device"
+emulator: argv[72] = "virtio-rng-pci"
+emulator: argv[73] = "-show-cursor"
+emulator: argv[74] = "-device"
+emulator: argv[75] = "virtio_input_multi_touch_pci_1"
+emulator: argv[76] = "-device"
+emulator: argv[77] = "virtio_input_multi_touch_pci_2"
+emulator: argv[78] = "-device"
+emulator: argv[79] = "virtio_input_multi_touch_pci_3"
+emulator: argv[80] = "-device"
+emulator: argv[81] = "virtio_input_multi_touch_pci_4"
+emulator: argv[82] = "-device"
+emulator: argv[83] = "virtio_input_multi_touch_pci_5"
+emulator: argv[84] = "-device"
+emulator: argv[85] = "virtio_input_multi_touch_pci_6"
+emulator: argv[86] = "-device"
+emulator: argv[87] = "virtio_input_multi_touch_pci_7"
+emulator: argv[88] = "-device"
+emulator: argv[89] = "virtio_input_multi_touch_pci_8"
+emulator: argv[90] = "-device"
+emulator: argv[91] = "virtio_input_multi_touch_pci_9"
+emulator: argv[92] = "-device"
+emulator: argv[93] = "virtio_input_multi_touch_pci_10"
+emulator: argv[94] = "-device"
+emulator: argv[95] = "virtio_input_multi_touch_pci_11"
+emulator: argv[96] = "-device"
+emulator: argv[97] = "virtio-keyboard-pci"
+emulator: argv[98] = "-netdev"
+emulator: argv[99] = "user,id=virtio-wifi,dhcpstart=10.0.2.16"
+emulator: argv[100] = "-device"
+emulator: argv[101] = "virtio-wifi-pci,netdev=virtio-wifi"
+emulator: argv[102] = "-device"
+emulator: argv[103] = "virtio-vsock-pci,guest-cid=77"
+emulator: argv[104] = "-L"
+emulator: argv[105] = "/Users/junchenli/Library/Android/sdk/emulator/lib/pc-bios"
+emulator: argv[106] = "-soundhw"
+emulator: argv[107] = "hda"
+emulator: argv[108] = "-vga"
+emulator: argv[109] = "none"
+emulator: argv[110] = "-append"
+emulator: argv[111] = "no_timer_check clocksource=pit console=0 cma=294M@0-4G loop.max_part=7 ramoops.mem_address=0xff018000 ramoops.mem_size=0x10000 memmap=0x10000$0xff018000 printk.devkmsg=on bootconfig"
+emulator: argv[112] = "-android-hw"
+emulator: argv[113] = "/Users/junchenli/.android/avd/emu2.avd/hardware-qemu.ini"
+Concatenated QEMU options:
+ /Users/junchenli/Library/Android/sdk/emulator/qemu/darwin-x86_64/qemu-system-x86_64 -dns-server 192.168.31.1 -no-audio -mem-path /Users/junchenli/.android/avd/emu2.avd/snapshots/default_boot/ram.img -mem-file-shared -serial null -android-ports 11876,11877 -device goldfish_pstore,addr=0xff018000,size=0x10000,file=/Users/junchenli/.android/avd/emu2.avd/data/misc/pstore/pstore.bin -cpu android64 -enable-hvf -smp cores=4 -m 2048 -lcd-density 440 -nodefaults -kernel /Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//kernel-ranchu -initrd /Users/junchenli/.android/avd/emu2.avd/initrd -drive if=none,index=0,id=system,if=none,file=/Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//system.img,read-only -device virtio-blk-pci,drive=system,modern-pio-notify -drive if=none,index=1,id=cache,if=none,file=/Users/junchenli/.android/avd/emu2.avd/cache.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576 -device virtio-blk-pci,drive=cache,modern-pio-notify -drive if=none,index=2,id=userdata,if=none,file=/Users/junchenli/.android/avd/emu2.avd/userdata-qemu.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576 -device virtio-blk-pci,drive=userdata,modern-pio-notify -drive if=none,index=3,id=encrypt,if=none,file=/Users/junchenli/.android/avd/emu2.avd/encryptionkey.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576 -device virtio-blk-pci,drive=encrypt,modern-pio-notify -drive if=none,index=4,id=vendor,if=none,file=/Users/junchenli/Library/Android/Sdk/system-images/android-31/google_apis/x86_64//vendor.img,read-only -device virtio-blk-pci,drive=vendor,modern-pio-notify -drive if=none,index=5,id=sdcard,if=none,file=/Users/junchenli/.android/avd/emu2.avd/sdcard.img.qcow2,overlap-check=none,cache=unsafe,l2-cache-size=1048576 -device virtio-blk-pci,drive=sdcard,modern-pio-notify -netdev user,id=mynet -device virtio-net-pci,netdev=mynet -chardev null,id=forhvc0 -chardev null,id=forhvc1 -device virtio-serial-pci,ioeventfd=off -device virtconsole,chardev=forhvc0 -device virtconsole,chardev=forhvc1 -device virtio-serial,ioeventfd=off -chardev socket,port=51214,host=::1,nowait,nodelay,ipv6,id=modem -device virtserialport,chardev=modem,name=modem -device virtio-rng-pci -show-cursor -device virtio_input_multi_touch_pci_1 -device virtio_input_multi_touch_pci_2 -device virtio_input_multi_touch_pci_3 -device virtio_input_multi_touch_pci_4 -device virtio_input_multi_touch_pci_5 -device virtio_input_multi_touch_pci_6 -device virtio_input_multi_touch_pci_7 -device virtio_input_multi_touch_pci_8 -device virtio_input_multi_touch_pci_9 -device virtio_input_multi_touch_pci_10 -device virtio_input_multi_touch_pci_11 -device virtio-keyboard-pci -netdev user,id=virtio-wifi,dhcpstart=10.0.2.16 -device virtio-wifi-pci,netdev=virtio-wifi -device virtio-vsock-pci,guest-cid=77 -L /Users/junchenli/Library/Android/sdk/emulator/lib/pc-bios -soundhw hda -vga none -append 'no_timer_check clocksource=pit console=0 cma=294M@0-4G loop.max_part=7 ramoops.mem_address=0xff018000 ramoops.mem_size=0x10000 memmap=0x10000$0xff018000 printk.devkmsg=on bootconfig' -android-hw /Users/junchenli/.android/avd/emu2.avd/hardware-qemu.ini
+emulator: Android qemu version 30.8.4.0 (build_id 7600983) (CL:N/A)
+
+emulator: Starting QEMU main loop
+emulator: registered 'boot-properties' qemud service
+emulator: Adding boot property: 'ro.opengles.version' = '196608'
+emulator: Adding boot property: 'qemu.sf.fake_camera' = 'front'
+emulator: Adding boot property: 'qemu.adb.secure' = '1'
+emulator: Adding boot property: 'dalvik.vm.heapsize' = '512m'
+emulator: Adding boot property: 'qemu.hw.mainkeys' = '0'
+emulator: Adding boot property: 'qemu.sf.lcd_density' = '440'
+emulator: goldfish_events.have-dpad: false
+emulator: goldfish_events.have-trackball: false
+emulator: goldfish_events.have-camera: true
+emulator: goldfish_events.have-keyboard: false
+emulator: goldfish_events.have-lidswitch: false
+emulator: goldfish_events.have-tabletmode: false
+emulator: goldfish_events.have-touch: false
+emulator: goldfish_events.have-multitouch: false
+emulator: Adding boot property: 'net.wifi_mac_prefix' = '11876'
+emulator: WARNING: Requested adb port (11877) is outside the recommended range [5555,5586]. ADB may not function properly for the emulator. See -help-port for details.
+Not using any http proxy
+emulator: Adding boot property: 'qemu.timezone' = 'Pacific/Auckland'
+emulator: android_hw_fingerprint_init: fingerprint qemud listen service initialized
+
+emulator: emulator_window_fb_rotate
+
+emulator: VERBOSE: MultiDisplay.cpp:734: config multidisplay with config.ini 0x0 0x0 0x0
+emulator: No acpi ini file provided, using default
+
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/junchenli/Library/Android/Sdk/platform-tools/adb protocol version: 41
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/junchenli/Library/Android/sdk/platform-tools/adb protocol version: 41
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/junchenli/Library/Android/Sdk/platform-tools/adb protocol version: 41
+emulator: VERBOSE: AdbInterface.cpp:409: Found: 3 adb executables
+emulator: VERBOSE: AdbInterface.cpp:411: Adb: /Users/junchenli/Library/Android/Sdk/platform-tools/adb
+emulator: VERBOSE: AdbInterface.cpp:411: Adb: /Users/junchenli/Library/Android/sdk/platform-tools/adb
+emulator: VERBOSE: AdbInterface.cpp:411: Adb: /Users/junchenli/Library/Android/Sdk/platform-tools/adb
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/junchenli/Library/Android/Sdk/platform-tools/adb protocol version: 41
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/junchenli/Library/Android/sdk/platform-tools/adb protocol version: 41
+emulator: VERBOSE: AdbInterface.cpp:367: Path:/Users/junchenli/Library/Android/Sdk/platform-tools/adb protocol version: 41
+emulator: No acpi ini file provided, using default
+
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: _hwFingerprint_connect: connect finger print listen is called
+
+emulator: got message from guest system fingerprint HAL
+
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: INFO: boot completed
+emulator: INFO: boot time 48161 ms
+emulator: Increasing screen off timeout, logcat buffer size to 2M.
+emulator: Revoking microphone permissions for Google App.
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: System.cpp:1571: Timed out with running command |/Users/junchenli/Library/Android/Sdk/platform-tools/adb -s emulator-11876 shell am broadcast -a com.android.emulator.multidisplay.START -n com.android.emulator.multidisplay/.MultiDisplayServiceReceiver |
+emulator: VERBOSE: AndroidAsyncMessagePipe.cpp:26: Registering pipe service multidisplay
+emulator: VERBOSE: MultiDisplayPipe.cpp:33: MultiDisplayPipe created 0x60000251c0e0
+emulator: VERBOSE: MultiDisplayPipe.cpp:49: MultiDisplayPipe recevied QUERY
+emulator: VERBOSE: MultiDisplayPipe.cpp:62: MultiDisplayPipe send add id 0 width 1080 height 2280 dpi 0 flag 0
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
+emulator: VERBOSE: VirtioWifiForwarder.cpp:206: Not a HWSIM_CMD_FRAME netlink message
