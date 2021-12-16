@@ -10,20 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- bash: |
-echo "fetching packages"
-npm i;
+- task: NodeTool@0
+  displayName: 'Install Node'
+  inputs:
+    versionSpec: '12.16.1'
 
-echo "Detox test setup"
-brew tap wix/brew;
-brew update;
-brew install applesimutils;
-
-echo "Install pods "
-cd ios; pod install; cd ..
-
-echo "Building the project for Detox tests..."
-npx detox build --configuration ios
-
-echo "Executing Detox tests..."
-npx detox test --configuration ios --cleanup
+- script: npm install
+  workingDirectory: .
+  displayName: 'Install node dependencies'
