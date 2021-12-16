@@ -10,7 +10,10 @@ const OverviewScreen: FC = () => {
   return (
     <View style={styles.container}>
       <Text>
-        Welcome userName: {name}, userEmail: {email}, userToken{token}
+        Welcome <br />
+        UserName: {name}, <br />
+        UserEmail: {email}, <br />
+        UserToken: {token}
       </Text>
     </View>
   );
@@ -22,6 +25,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
   },
 });

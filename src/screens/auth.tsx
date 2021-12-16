@@ -24,7 +24,6 @@ const AuthScreen: FC = () => {
   const dispatch = useAppDispatch();
 
   //read about useEffect and !!
-
   //example of useMemo
   const isLogin = useMemo(() => {
     return toggleState === 1;
@@ -74,7 +73,7 @@ const AuthScreen: FC = () => {
   }, [validate, dispatch, email, password, name, isLogin]);
 
   return (
-    <KeyboardAvoidingView style={styles.rootContainer}>
+    <KeyboardAvoidingView style={styles.rootContainer} behavior="padding">
       <View style={styles.container}>
         <View>
           <BinarySwitch

@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffff',
     borderRadius: 5,
     marginVertical: 5,
+    maxWidth: '300px',
   },
   input: {
     padding: 15,
