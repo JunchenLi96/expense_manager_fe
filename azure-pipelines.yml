@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: 
+echo "fetching packages"
+npm i
+
+echo "Detox test setup"
+brew tap wix/brew
+brew update
+brew install applesimutils
+
+echo "Install pods "
+cd ios; pod install; cd ..
+
+echo "Building the project for Detox tests..."
+npx detox build --configuration ios
+
+echo "Executing Detox tests..."
+npx detox test --configuration ios --cleanup
