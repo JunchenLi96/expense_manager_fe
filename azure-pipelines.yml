@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- bash: | 
+- bash: |
 echo "fetching packages"
 npm i
 
