@@ -12,12 +12,12 @@ pool:
 steps:
 - bash: |
 echo "fetching packages"
-npm i
+npm i;
 
 echo "Detox test setup"
-brew tap wix/brew
-brew update
-brew install applesimutils
+brew tap wix/brew;
+brew update;
+brew install applesimutils;
 
 echo "Install pods "
 cd ios; pod install; cd ..
